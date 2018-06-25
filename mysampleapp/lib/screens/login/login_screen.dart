@@ -17,61 +17,53 @@ class LoginFormState extends State<LoginForm>{
       backgroundColor: Colors.pinkAccent,
       body: new Center (
         child: new Container(
-          constraints: BoxConstraints(
-          maxHeight: 350.0,
-          maxWidth: 350.0,
-          minWidth: 250.0,
-          minHeight: 250.0
-      ),
           alignment:  Alignment.center,
-          color: Colors.white24,
-          padding: new EdgeInsets.symmetric(horizontal: 30.0),
+          width: 300.0,
+          height: 320.0,
+          color: Colors.white,
           child: new Column(
             children: <Widget>[
               new Padding(
-                padding: new EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 10.0),
-                child:  new Image.network(
-                  'https://raw.githubusercontent.com/flutter/website/master/_includes/code/layout/lakes/images/lake.jpg',
-                  height: 50.0,
+                padding: new EdgeInsets.only(left: 20.0, top: 30.0, right: 20.0),
+                child: new Text(
+                  "Login to the app",
+                  style: new TextStyle(fontSize: 20.0),
+                  textAlign: TextAlign.center,
                 ),
               ),
               new Padding(
-                padding: new EdgeInsets.fromLTRB(30.0, 5.0, 30.0, 5.0),
+                padding: new EdgeInsets.only(left: 20.0, top: 30.0, right: 20.0),
                 child: new TextField(
-                    keyboardType: TextInputType.emailAddress,
-                    textAlign: TextAlign.center,
-                    decoration: new InputDecoration(
-                      fillColor: Colors.black,
-                      hintText: 'Username'
-                    ),
-                ),
-              ),
-              new Padding(
-                padding: new EdgeInsets.fromLTRB(30.0, 5.0, 30.0, 5.0),
-                child: new TextField(
-                  obscureText: true,
                   keyboardType: TextInputType.emailAddress,
                   textAlign: TextAlign.center,
+                  style: new TextStyle(fontSize: 15.0, color: Colors.black),
+                  decoration: new InputDecoration(
+                    hintText: 'Username',
+                    contentPadding: new EdgeInsets.symmetric(vertical: 10.0),
+                  ),
+                ),
+              ),
+              new Padding(
+                padding: new EdgeInsets.only(left: 20.0, top: 20.0, right: 20.0),
+                child: new TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  textAlign: TextAlign.center,
+                  obscureText: true,
+                  style: new TextStyle(fontSize: 15.0, color:  Colors.black),
                   decoration: new InputDecoration(
                     fillColor: Colors.black,
-                    hintText: 'Password'
+                    hintText: 'Password',
+                    contentPadding: new EdgeInsets.symmetric(vertical: 10.0),
                   ),
                 ),
               ),
               new Padding (
-                 padding: new EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 5.0),
+                 padding: new EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 10.0),
                 child:  new InkWell(
                   onTap: (){
                     Navigator.pushNamed(context, '/home');
                   },
                   child: new Container(
-                    //width: 100.0,
-               margin: new  EdgeInsets.only(
-                 left: 30.0,
-                 top: 30.0,
-                 right: 30.0,
-                 bottom: 5.0
-               ),
                     height: 50.0,
                     decoration: new BoxDecoration(
                       color: Colors.blueAccent,
@@ -82,23 +74,33 @@ class LoginFormState extends State<LoginForm>{
                   ),
                 )
               ),
-              new Padding(
-                padding: new EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 10.0),
-                child: new Container(
-                  color: Colors.black,
-                  height: 50.0,
-                  // decoration:new  BoxDecoration(
-                  //     color: Colors.blueAccent,
-                  //     border: new Border.all(color: Colors.white, width: 2.0),
-                  //     borderRadius: new BorderRadius.circular(25.0),
-                  // ),
-                  child: new TextField(
-                    textAlign: TextAlign.center,
-                    decoration: new InputDecoration(
-                      hintText: "Username",
+              new Row(
+                children: <Widget>[
+                  new FlatButton(
+                      onPressed: (){
+                        Navigator.pushNamed(context, '/home');
+                      },
+                      padding: new EdgeInsets.only(left:20.0, top:10.0),
+                      child: new Text(
+                        "Forgot password",
+                        style: new TextStyle(
+                          fontSize: 13.0,
+                        ),
+                      ),
+                    ),
+                  new FlatButton(
+                    onPressed: (){
+                      Navigator.pushNamed(context, '/home');
+                    },
+                    padding: new EdgeInsets.only(right:20.0, top:10.0),
+                    child: new Text(
+                      "Signup",
+                      style: new TextStyle(
+                        fontSize: 13.0,
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
             ],
           ),
